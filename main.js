@@ -1,4 +1,5 @@
 const { crawlPage} = require('./crawl')
+const printReport = require('./report')
 
 async function main() {
     const args = process.argv.slice(2);
@@ -8,7 +9,8 @@ async function main() {
         let pages = {};
 
         const data = await crawlPage(args, args, pages);
-        console.log(data)
+
+        printReport(data)
 
     }else{
         console.log("Error");
